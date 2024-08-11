@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ventas - Tienda Pequeña</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Ventas - Tienda Pequeña</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <button onclick="mostrarSeccion('clientes')"><i class="fas fa-users"></i> Clientes</button>
+            <button onclick="mostrarSeccion('empleados')"><i class="fas fa-id-card"></i> Empleados</button>
+            <button onclick="mostrarSeccion('productos')"><i class="fas fa-box"></i> Productos</button>
+            <button onclick="mostrarSeccion('ordenes')"><i class="fas fa-shopping-cart"></i> Órdenes</button>
+        </nav>
+        <main>
+            <section id="clientes" class="seccion">
+                <h2><i class="fas fa-users"></i> Clientes</h2>
+                <div class="content-wrapper">
+                    <form id="clienteForm">
+                        <input type="text" id="clienteNombre" placeholder="Nombre del cliente" required>
+                        <input type="email" id="clienteEmail" placeholder="Email del cliente" required>
+                        <button type="submit">Agregar Cliente</button>
+                    </form>
+                    <div id="listaClientes" class="lista-items"></div>
+                </div>
+            </section>
+            <section id="empleados" class="seccion">
+                <h2>Empleados</h2>
+                <div class="content-wrapper">
+                    <form id="empleadoForm">
+                        <input type="text" id="empleadoNombre" placeholder="Nombre del empleado" required>
+                        <input type="text" id="empleadoCargo" placeholder="Cargo del empleado" required>
+                        <button type="submit">Agregar Empleado</button>
+                    </form>
+                    <ul id="listaEmpleados"></ul>
+                </div>
+            </section>
+            <section id="productos" class="seccion">
+                <h2>Productos</h2>
+                <div class="content-wrapper">
+                    <form id="productoForm">
+                        <input type="text" id="productoNombre" placeholder="Nombre del producto" required>
+                        <input type="number" id="productoPrecio" placeholder="Precio del producto" required>
+                        <button type="submit">Agregar Producto</button>
+                    </form>
+                    <ul id="listaProductos"></ul>
+                </div>
+            </section>
+            <section id="ordenes" class="seccion">
+                <h2>Órdenes</h2>
+                <div class="content-wrapper">
+                    <form id="ordenForm">
+                        <select id="ordenCliente" required>
+                            <option value="">Seleccione un cliente</option>
+                        </select>
+                        <div id="productosOrden">
+                            <div class="producto-orden">
+                                <select class="ordenProducto" required>
+                                    <option value="">Seleccione un producto</option>
+                                </select>
+                                <input type="number" class="ordenCantidad" placeholder="Cantidad" required min="1">
+                            </div>
+                        </div>
+                        <button type="button" id="agregarProducto">Agregar otro producto</button>
+                        <p>Total: $<span id="totalOrden">0.00</span></p>
+                        <button type="submit">Crear Orden</button>
+                    </form>
+                    <ul id="listaOrdenes"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Acerca de TechStore</h3>
+                <p>TechStore es tu destino confiable para productos electrónicos de alta calidad. Fundada en 2010, nos enorgullecemos de ofrecer excelente servicio al cliente y las últimas innovaciones tecnológicas.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <p>Email: info@techstore.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Dirección: Calle Tecnología 123, Ciudad Digital, 12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes: 9:00 AM - 8:00 PM</p>
+                <p>Sábados: 10:00 AM - 6:00 PM</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
